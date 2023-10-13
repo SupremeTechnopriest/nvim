@@ -9,7 +9,9 @@ return {
         theme = 'monokai-pro',
         disabled_filetypes = {
           statusline = {
-            'neo-tree'
+            'neo-tree',
+            'dashboard',
+            'undotree'
           }
         }
       },

@@ -4,7 +4,6 @@ return {
   build = ':TSUpdate',
   event = { 'BufReadPost', 'BufNewFile' },
   cmd = { 'TSUpdateSync' },
-  ---@type TSConfig
   opts = {
     highlight = { enable = true },
     indent = { enable = true },
@@ -31,4 +30,4 @@ return {
       'zig'
     }
   }
-} 
+}
