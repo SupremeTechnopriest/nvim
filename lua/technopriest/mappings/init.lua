@@ -69,4 +69,8 @@ vim.keymap.set('n', '<leader>gbh', ':Telescope git_bcommits<CR>')
 vim.keymap.set('n', '<leader>gpo', ':!git push origin `git rev-parse --abbrev-ref HEAD`<bar>:Neotree git_status<CR>')
 vim.keymap.set('n', '<leader>git', ':Neogit<CR>')
 
-
+-- Annotation --
+vim.keymap.set('n', '<leader>nc', ':Neogen class<CR>')
+vim.keymap.set('n', '<leader>nf', ':Neogen func<CR>')
+vim.keymap.set('n', '<leader>nt', ':Neogen type<CR>')
+vim.keymap.set('n', '<leader>nf', ':Neogen file<CR>')
