@@ -66,7 +66,7 @@ vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>')
 vim.keymap.set('n', '<leader>gs', ':Telescope git_status<CR>')
 vim.keymap.set('n', '<leader>gh', ':Telescope git_commits<CR>')
 vim.keymap.set('n', '<leader>gbh', ':Telescope git_bcommits<CR>')
-vim.keymap.set('n', '<leader>gpo', ':!git push origin `git rev-parse --abbrev-ref HEAD`<CR>|:Neotree git_status<CR>')
+vim.keymap.set('n', '<leader>gpo', ':!git push origin `git rev-parse --abbrev-ref HEAD`<CR><bar>:Neotree git_status<CR>')
 vim.keymap.set('n', '<leader>git', ':Neogit<CR>')
 
 
