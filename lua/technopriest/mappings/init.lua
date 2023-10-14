@@ -45,17 +45,17 @@ vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename)
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- Make Executable --
-vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
+vim.keymap.set('n', '<leader>x', ':!chmod +x %<CR>', { silent = true })
 
 -- Search --
 vim.keymap.set('n', '.', ';')
 
 -- Comments --
-vim.keymap.set({ 'n', 'v' }, 'gbb', ':CBlbox 1<CR>')
-vim.keymap.set({ 'n', 'v' }, 'gbe', ':CBcbox 18<CR>')
-vim.keymap.set({ 'n', 'v' }, 'gbq', ':CBrbox 12<CR>')
-vim.keymap.set({ 'n', 'v' }, 'gbh', ':CBrbox 20<CR>')
-vim.keymap.set({ 'n', 'v' }, 'gbl', ':CBline 2<CR>')
+vim.keymap.set({ 'n', 'v' }, '/bb', ':CBlbox 1<CR>')
+vim.keymap.set({ 'n', 'v' }, '/be', ':CBcbox 18<CR>')
+vim.keymap.set({ 'n', 'v' }, '/bq', ':CBrbox 12<CR>')
+vim.keymap.set({ 'n', 'v' }, '/bh', ':CBrbox 20<CR>')
+vim.keymap.set({ 'n', 'v' }, '/bl', ':CBline 2<CR>')
 
 -- Undo Tree --
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
@@ -64,6 +64,9 @@ vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 vim.keymap.set('n', '<leader>gc', ':Telescope gitmoji<CR>')
 vim.keymap.set('n', '<leader>gb', ':Telescope git_branches<CR>')
 vim.keymap.set('n', '<leader>gs', ':Telescope git_status<CR>')
+vim.keymap.set('n', '<leader>gh', ':Telescope git_commits<CR>')
+vim.keymap.set('n', '<leader>gbh', ':Telescope git_bcommits<CR>')
+vim.keymap.set('n', '<leader>gpo', ':!git push origin `git rev-parse --abbrev-ref HEAD`<CR>')
 vim.keymap.set('n', '<leader>git', ':Neogit<CR>')
 
 
