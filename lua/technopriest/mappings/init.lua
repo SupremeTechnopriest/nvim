@@ -67,11 +67,11 @@ vim.keymap.set("n", "<leader>gbh", ":Telescope git_bcommits<CR>", { desc = "Git 
 vim.keymap.set(
 	"n",
 	"<leader>gpo",
-	function()
-		vim.cmd("!git push origin `git rev-parse --abbrev-ref HEAD`")
-		vim.cmd("Neotree git_status focus left")
-	end,
-	-- ":!git push origin `git rev-parse --abbrev-ref HEAD`<CR>\|:Neotree git_status left",
+	-- function()
+	-- 	vim.cmd("!git push origin `git rev-parse --abbrev-ref HEAD`<CR>")
+	-- 	vim.cmd("Neotree git_status focus left<CR>")
+	-- end,
+	":!git push origin `git rev-parse --abbrev-ref HEAD`<CR> <BAR> :Neotree git_status focus left<CR>",
 	{ desc = "Git push current branch" }
 )
 vim.keymap.set("n", "<leader>git", ":Neogit<CR>", { desc = "Git" })
