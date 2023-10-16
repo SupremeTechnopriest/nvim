@@ -18,7 +18,7 @@ vim.keymap.set("n", "<leader>so", vim.cmd.so, { desc = "Source current buffer" }
 vim.keymap.set("n", "<leader><leader>", "<C-w>", { desc = "Window selection mode" })
 
 -- Zen Mode --
-vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Enter mode" })
+vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Enter zen mode" })
 
 -- Move Lines --
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move lines down" })
@@ -67,7 +67,11 @@ vim.keymap.set("n", "<leader>gbh", ":Telescope git_bcommits<CR>", { desc = "Git 
 vim.keymap.set(
 	"n",
 	"<leader>gpo",
-	":!git push origin `git rev-parse --abbrev-ref HEAD`",
+	function()
+		vim.cmd("!git push origin `git rev-parse --abbrev-ref HEAD`")
+		vim.cmd("Neotree git_status focus left")
+	end,
+	-- ":!git push origin `git rev-parse --abbrev-ref HEAD`<CR>\|:Neotree git_status left",
 	{ desc = "Git push current branch" }
 )
 vim.keymap.set("n", "<leader>git", ":Neogit<CR>", { desc = "Git" })
