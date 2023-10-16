@@ -6,13 +6,13 @@ return {
       sticky = true,
       ignore = nil,
       toggler = {
-        line = '/c',
-        block = '/cb'
+        line = '<leader>/c',
+        block = '<leader>/cb'
       },
       extra = {
-        above = '/O',
-        below = '/o',
-        eol = '/a'
+        above = '<leader>/O',
+        below = '<leader>/o',
+        eol = '<leader>/a'
       },
       mappings = {
         basic = true,

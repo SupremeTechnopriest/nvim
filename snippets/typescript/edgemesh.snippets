@@ -1,0 +1,10 @@
+snippet handler "API Route handler"
+	import { handler } from '@/utils/handler'
+	
+	import type { IContext } from '@/types/IContext'
+
+	export const ${1} = Handler({
+		async handler (req: Request, ctx: IContext) {
+			ctx.data = {}
+		}
+	})
