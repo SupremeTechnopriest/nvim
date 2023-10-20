@@ -5,6 +5,7 @@ require("technopriest/mappings/bufferline")
 require("technopriest/mappings/ufo")
 require("technopriest/mappings/tests")
 require("technopriest/mappings/projectionist")
+require("technopriest/mappings/trouble")
 
 -- No Op --
 vim.keymap.set("n", "Q", "<nop>")
@@ -12,7 +13,9 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Leader --
 vim.keymap.set("n", ";", ":", { desc = "Command mode" })
-vim.keymap.set("n", "<leader>so", vim.cmd.so, { desc = "Source current buffer" })
+
+-- Save --
+vim.keymap.set("n", "<leader>s", ":w<CR>", { desc = "Write current buffer" })
 
 -- Focus Split --
 vim.keymap.set("n", "<leader><leader>", "<C-w>", { desc = "Window selection mode" })
@@ -33,20 +36,17 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search term" })
 vim.keymap.set("x", "<leader>p", [['_dP]], { desc = "Paste and preserve buffer" })
 
 -- Delete to Void Register --
-vim.keymap.set({ "n", "v" }, "<leader>d", [['_d]], { desc = "Delete to void" })
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete to void" })
 
 -- Copy to System Clipboard --
-vim.keymap.set({ "n", "v" }, "<leader>y", [['+y]], { desc = "Copy to system clipboard (after)" })
-vim.keymap.set("n", "<leader>Y", [['+Y]], { desc = "Copy to system clipboard (before)" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard (after)" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy to system clipboard (before)" })
 
 -- Replace Current Word --
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Find and replace" })
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "Find and replace" })
 
 -- Make Executable --
 vim.keymap.set("n", "<leader>x", ":!chmod +x %<CR>", { silent = true, desc = "Make executable" })
-
--- Search --
-vim.keymap.set("n", ".", ";", { desc = "Next" })
 
 -- Comments --
 vim.keymap.set({ "n", "v" }, "<leader>/bb", ":CBlbox 1<CR>", { desc = "Border box comment" })
@@ -54,6 +54,10 @@ vim.keymap.set({ "n", "v" }, "<leader>/be", ":CBcbox 18<CR>", { desc = "Enclosed
 vim.keymap.set({ "n", "v" }, "<leader>/bq", ":CBrbox 12<CR>", { desc = "Quote box comment" })
 vim.keymap.set({ "n", "v" }, "<leader>/bh", ":CBrbox 20<CR>", { desc = "Header box comment" })
 vim.keymap.set({ "n", "v" }, "<leader>/bl", ":CBline 2<CR>", { desc = "Line comment" })
+
+-- TODO --
+vim.keymap.set("n", "<leader>ftd<CR>", ":TodoTelescope")
+vim.keymap.set("n", "<leader>wtd<CR>", ":TodoLocList")
 
 -- Undo Tree --
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle undo tree" })
@@ -77,3 +81,6 @@ vim.keymap.set("n", "<leader>nc", ":Neogen class<CR>", { desc = "Notate class" }
 vim.keymap.set("n", "<leader>nf", ":Neogen func<CR>", { desc = "Notate function" })
 vim.keymap.set("n", "<leader>nt", ":Neogen type<CR>", { desc = "Notate type" })
 vim.keymap.set("n", "<leader>nm", ":Neogen file<CR>", { desc = "Notate file" })
+
+-- Emoji --
+vim.keymap.set("n", "<leader>e", ":Telescope emoji<CR>", { desc = "Emoji picker" })
