@@ -7,7 +7,7 @@ return {
 	},
 	dependencies = {
 		"nvim-lua/plenary.nvim",
-		"telescope-nvim/telescope.nvim",
+		"nvim-telescope/telescope.nvim",
 	},
 	opts = {
 		workspaces = {

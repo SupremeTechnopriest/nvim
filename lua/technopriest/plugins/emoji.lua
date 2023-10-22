@@ -1,7 +1,7 @@
 return {
 	"xiyaowong/telescope-emoji.nvim",
 	dependencies = {
-		"telescope-nvim/telescope.nvim",
+		"nvim-telescop/telescope.nvim",
 	},
 	config = function()
 		require("telescope").setup({
