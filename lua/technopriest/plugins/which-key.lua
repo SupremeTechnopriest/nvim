@@ -1,14 +1,16 @@
 return {
-  'folke/which-key.nvim',
-  event = 'VeryLazy',
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end,
-  opts = {},
-  plugins = {
-    presets = {
-      operators = false
-    }
-  }
+	"folke/which-key.nvim",
+	event = "VeryLazy",
+	init = function()
+		vim.o.timeout = true
+		vim.o.timeoutlen = 300
+	end,
+	opts = {},
+	plugins = {
+		presets = {
+			operators = true,
+			motions = true,
+			text_objects = true,
+		},
+	},
 }
