@@ -73,7 +73,7 @@ wk.register({
 		w = { "<cmd>Neotree toggle<CR>", "Toggle" },
 		f = { "<cmd>Neotree filesystem focus left<CR>", "Files" },
 		b = { "<cmd>Neotree buffers focus left<CR>", "Buffers" },
-		g = { "<cmd>Neotree git_status focus left<CR>", "Buffers" },
+		g = { "<cmd>Neotree git_stats focus left<CR>", "Buffers" },
 		p = {
 			name = "Problems",
 			p = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "Project" },
@@ -384,6 +384,13 @@ wk.register({
 		H = { "<cmd>Telescope git_bcommits<CR>", "Buffer history" },
 		d = { "<cmd>DiffviewOpen<CR>", "Diff" },
 		g = { "<cmd>Neogit<CR>", "Interface" },
+		p = {
+			name = "Push",
+			o = {
+				"<cmd>!git push origin `git rev-parse --abbrev-ref HEAD`<CR> <BAR> <cmd>Neotree git_status focus left<CR>",
+				"Git push origin current branch",
+			},
+		},
 	},
 }, { prefix = "<leader>" })
 
