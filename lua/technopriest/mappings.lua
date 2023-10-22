@@ -73,7 +73,7 @@ wk.register({
 		w = { "<cmd>Neotree toggle<CR>", "Toggle" },
 		f = { "<cmd>Neotree filesystem focus left<CR>", "Files" },
 		b = { "<cmd>Neotree buffers focus left<CR>", "Buffers" },
-		g = { "<cmd>Neotree git_stats focus left<CR>", "Buffers" },
+		g = { "<cmd>Neotree git_status focus left<CR>", "Git" },
 		p = {
 			name = "Problems",
 			p = { "<cmd>TroubleToggle workspace_diagnostics<CR>", "Project" },
