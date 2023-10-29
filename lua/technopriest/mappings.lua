@@ -18,7 +18,7 @@ wk.register({
 	d = { '[["_d]]', "Delete preserve", mode = { "n", "v" } },
 	y = { '[["+y]]', "System copy before", mode = { "n", "v" } },
 	Y = { '[["+Y]]', "System copy after", mode = { "n", "v" } },
-	a = { "[[:%s/<<C-r><C-w>>//gI<Left><Left><Left>]]", "Replace word" },
+	r = { "[[:%s/<<C-r><C-w>>//gI<Left><Left><Left>]]", "Replace word", mode = { "n", "v" } },
 	x = { "<cmd>!chmod +x %<CR>", "Make executable", { silent = true } },
 	u = { "<cmd>UndotreeToggle<CR>", "Undo history" },
 	t = { "<cmd>TSPlaygroundToggle<CR>", "AST Viewer" },
@@ -124,12 +124,12 @@ wk.register({
 		h = { "<cmd>BufferLineCloseLeft<CR>", "Left buffers" },
 		l = { "<cmd>BufferLineCloseRight<CR>", "Right buffers" },
 		a = { "<cmd>BufferLineCloseOthers<CR>", "Other buffers" },
-		f = { "<cmd>BufferLinePickOthers<CR>", "Pick buffer" },
+		f = { "<cmd>BufferLinePickClose<CR>", "Pick buffer" },
 	},
 	b = {
 		name = "Select buffer",
-		p = { "<cmd>BufferLineTogglePin", "Toggle pin" },
-		f = { "<cmd>BufferLinePick", "Pick buffer" },
+		p = { "<cmd>BufferLineTogglePin<CR>", "Toggle pin" },
+		f = { "<cmd>BufferLinePick<CR>", "Pick buffer" },
 		["0"] = { "<cmd>BufferLineGoTo 0<CR>", "Go to buffer 0" },
 		["1"] = { "<cmd>BufferLineGoTo 1<CR>", "Go to buffer 1" },
 		["2"] = { "<cmd>BufferLineGoTo 2<CR>", "Go to buffer 2" },
@@ -359,7 +359,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 --  ╰──────────────────────────────────────────────────────────╯
 
 wk.register({
-	r = {
+	R = {
 		name = "Run",
 		t = {
 			name = "Run test",

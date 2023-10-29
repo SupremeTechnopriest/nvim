@@ -10,7 +10,7 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
-				typescript = { "prettierd" },
+				typescript = { "eslint_d" },
 				javascript = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
 				javascriptreact = { "eslint_d" },

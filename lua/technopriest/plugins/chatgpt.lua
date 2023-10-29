@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("chatgpt").setup({
-			async_api_key_cmd = 'op item get OpenAI --fields label="API Key" --no-newline',
+			async_api_key_cmd = 'op item get OpenAI --fields label="API Key"',
 			openai_params = {
 				model = "gpt-4",
 			},
