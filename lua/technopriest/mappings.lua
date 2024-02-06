@@ -538,3 +538,46 @@ wk.register({
 		q = { "<cmd>ObsidianQuickSwitch<CR>", "Obsidian quick switch" },
 	},
 }, { prefix = "<leader>" })
+
+--  ╭──────────────────────────────────────────────────────────╮
+--  │ Flash                                                    │
+--  ╰──────────────────────────────────────────────────────────╯
+
+local flash = require("flash")
+wk.register({
+	s = {
+		function()
+			flash.jump()
+		end,
+		"Flash",
+		mode = { "n", "x", "o" },
+	},
+	S = {
+		function()
+			flash.treesitter()
+		end,
+		"Flash Treesitter",
+		mode = { "n", "x", "o" },
+	},
+	r = {
+		function()
+			flash.remote()
+		end,
+		"Flash Remote",
+		mode = { "o" },
+	},
+	R = {
+		function()
+			flash.treesitter_search()
+		end,
+		"Treesitter Search",
+		mode = { "o", "x" },
+	},
+	["<c-s>"] = {
+		function()
+			flash.toggle()
+		end,
+		"Toggle Flash Search",
+		mode = { "c" },
+	},
+})
