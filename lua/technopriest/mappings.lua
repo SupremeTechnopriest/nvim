@@ -166,6 +166,7 @@ wk.register({
 --  ╰──────────────────────────────────────────────────────────╯
 
 local comments = require("Comment.api")
+local bc = require("technopriest/bigcomment")
 
 wk.register({
 	["/"] = {
@@ -218,23 +219,21 @@ wk.register({
 			end,
 			"Block comment end",
 		},
-		["m"] = {
+		m = {
 			comments.call("toggle.linewise", "g@"),
 			"Line comment motion",
 			expr = true,
 		},
-		["M"] = {
+		M = {
 			comments.call("toggle.blockwise", "g@"),
 			"Block comment motion",
 			expr = true,
 		},
 		b = {
-			name = "Box",
-			b = { "<cmd>CBlbox 1<CR>", "Border box", mode = { "n", "v" } },
-			e = { "<cmd>CBcbox 18<CR>", "Enclosed box", mode = { "n", "v" } },
-			q = { "<cmd>CBrbox 12<CR>", "Quote box", mode = { "n", "v" } },
-			h = { "<cmd>CBrbox 20<CR>", "Header box", mode = { "n", "v" } },
-			l = { "<cmd>CBlbox 2<CR>", "Line box", mode = { "n", "v" } },
+			function()
+				bc.bigcomment()
+			end,
+			"Big Comment",
 		},
 	},
 }, { prefix = "<leader>" })
