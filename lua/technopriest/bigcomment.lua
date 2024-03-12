@@ -308,7 +308,8 @@ function M.bigcomment()
 	local comment_symbol = L[filetype]
 
 	local line = vim.api.nvim_get_current_line()
-	local lineNum, indent = unpack(vim.api.nvim_win_get_cursor(0))
+	local lineNum, _ = unpack(vim.api.nvim_win_get_cursor(0))
+	local indent = vim.fn.indent(lineNum)
 
 	local bigline = stringToBigComment(line, indent, comment_symbol)
 
