@@ -6,13 +6,11 @@ return {
     vim.o.number = true
     vim.o.termguicolors = true
   end,
-  config = function()
-    require('modicator').setup({
-      highlights = {
-        defaults = {
-          bold = true
-        }
+  opts = {
+    highlights = {
+      defaults = {
+        bold = true
       }
-    })
-  end
+    }
+  }
 }

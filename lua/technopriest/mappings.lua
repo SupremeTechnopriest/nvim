@@ -109,38 +109,30 @@ wk.register({
 --  │ Buffers                                                  │
 --  ╰──────────────────────────────────────────────────────────╯
 
-local bufdelete = require("bufdelete")
-
 wk.register({
-	["<Tab>"] = { "<cmd>BufferLineCycleNext<CR>", "Next buffer" },
-	["<S-Tab>"] = { "<cmd>BufferLineCyclePrev<CR>", "Previous buffer" },
+	["<Tab>"] = { "<cmd>BufferNext<CR>", "Next buffer" },
+	["<S-Tab>"] = { "<cmd>BufferPrevious<CR>", "Previous buffer" },
 	q = {
 		name = "Close Buffer",
-		q = {
-			function()
-				bufdelete.bufdelete(0, true)
-			end,
-			"Current Buffer",
-		},
-		h = { "<cmd>BufferLineCloseLeft<CR>", "Left buffers" },
-		l = { "<cmd>BufferLineCloseRight<CR>", "Right buffers" },
-		a = { "<cmd>BufferLineCloseOthers<CR>", "Other buffers" },
-		f = { "<cmd>BufferLinePickClose<CR>", "Pick buffer" },
+		q = { "<cmd>BufferClose<CR>", "Current Buffer" },
+		h = { "<cmd>BufferCloseBuffersLeft<CR>", "Left buffers" },
+		l = { "<cmd>BufferCloseBuffersRight<CR>", "Right buffers" },
+		a = { "<cmd>BufferCloseAllButCurrentOrPinned<CR>", "Other buffers" },
 	},
 	b = {
 		name = "Select buffer",
-		p = { "<cmd>BufferLineTogglePin<CR>", "Toggle pin" },
-		f = { "<cmd>BufferLinePick<CR>", "Pick buffer" },
-		["0"] = { "<cmd>BufferLineGoTo 0<CR>", "Go to buffer 0" },
-		["1"] = { "<cmd>BufferLineGoTo 1<CR>", "Go to buffer 1" },
-		["2"] = { "<cmd>BufferLineGoTo 2<CR>", "Go to buffer 2" },
-		["3"] = { "<cmd>BufferLineGoTo 3<CR>", "Go to buffer 3" },
-		["4"] = { "<cmd>BufferLineGoTo 4<CR>", "Go to buffer 4" },
-		["5"] = { "<cmd>BufferLineGoTo 5<CR>", "Go to buffer 5" },
-		["6"] = { "<cmd>BufferLineGoTo 6<CR>", "Go to buffer 6" },
-		["7"] = { "<cmd>BufferLineGoTo 7<CR>", "Go to buffer 7" },
-		["8"] = { "<cmd>BufferLineGoTo 8<CR>", "Go to buffer 8" },
-		["9"] = { "<cmd>BufferLineGoTo 9<CR>", "Go to buffer 9" },
+		p = { "<cmd>BufferPin<CR>", "Toggle pin" },
+		f = { "<cmd>BufferPick<CR>", "Pick buffer" },
+		["0"] = { "<cmd>BufferGoto 0<CR>", "Go to buffer 0" },
+		["1"] = { "<cmd>BufferGoto 1<CR>", "Go to buffer 1" },
+		["2"] = { "<cmd>BufferGoto 2<CR>", "Go to buffer 2" },
+		["3"] = { "<cmd>BufferGoto 3<CR>", "Go to buffer 3" },
+		["4"] = { "<cmd>BufferGoto 4<CR>", "Go to buffer 4" },
+		["5"] = { "<cmd>BufferGoto 5<CR>", "Go to buffer 5" },
+		["6"] = { "<cmd>BufferGoto 6<CR>", "Go to buffer 6" },
+		["7"] = { "<cmd>BufferGoto 7<CR>", "Go to buffer 7" },
+		["8"] = { "<cmd>BufferGoto 8<CR>", "Go to buffer 8" },
+		["9"] = { "<cmd>BufferGoto 9<CR>", "Go to buffer 9" },
 	},
 }, { prefix = "<leader>" })
 
